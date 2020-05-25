@@ -25,7 +25,7 @@ async def get_bytes(url):
 app = Starlette()
 
 path=Path(".")
-print(path)
+print(path.ls())
 am_learner = load_learner(path)
 
 @app.route("/upload", methods=["POST"])
