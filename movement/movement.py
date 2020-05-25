@@ -2,10 +2,10 @@ from starlette.applications import Starlette
 from starlette.responses import JSONResponse, HTMLResponse, RedirectResponse
 from fastai.vision import (
     ImageDataBunch,
-    ConvLearner,
     open_image,
     get_transforms,
     models,
+    load_learner
 )
 import torch
 from pathlib import Path
