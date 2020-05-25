@@ -11,7 +11,7 @@ RUN pip install fastai
 RUN pip install starlette uvicorn python-multipart aiohttp
 
 ADD movement.py movement.py
-ADD stage-2.pth stage-2.pth
+ADD export.pkl export.pkl
 
 # Run it once to trigger resnet download
 RUN python movement.py
