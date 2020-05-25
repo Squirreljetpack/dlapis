@@ -25,6 +25,7 @@ async def get_bytes(url):
 app = Starlette()
 
 path=Path(".")
+print(path)
 am_learner = load_learner(path)
 
 @app.route("/upload", methods=["POST"])
@@ -42,6 +43,7 @@ async def classify_url(request):
 
 def predict_image_from_bytes(bytes):
     img = open_image(BytesIO(bytes))
+    print('works')
     _,_,losses = am_learner.predict(img)
     return JSONResponse({
         "predictions": sorted(
