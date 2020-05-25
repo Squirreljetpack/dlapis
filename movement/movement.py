@@ -24,23 +24,6 @@ async def get_bytes(url):
 
 app = Starlette()
 
-am_images_path = Path("/tmp")
-am_fnames = [
-    "/{}_1.jpg".format(c)
-    for c in [
-        "cubism",
-        "romanticism",
-        "expressionism",
-    ]
-]
-am_data = ImageDataBunch.from_name_re(
-    am_images_path,
-    am_fnames,
-    r"/([^/]+)_\d+.jpg$",
-    ds_tfms=get_transforms(),
-    size=224,
-)
-
 path=Path(".")
 am_learner = load_learner(path)
 
